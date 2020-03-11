@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="313301f2-7b8f-4b4b-a9cf-4adf7239507d" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change beforePath="$PROJECT_DIR$/my_app/models.py" afterPath="$PROJECT_DIR$/my_app/models.py" />
@@ -13,6 +14,9 @@
       <change beforePath="$PROJECT_DIR$/my_app/templates/home.html" afterPath="$PROJECT_DIR$/my_app/templates/home.html" />
       <change beforePath="$PROJECT_DIR$/my_app/urls.py" afterPath="$PROJECT_DIR$/my_app/urls.py" />
       <change beforePath="$PROJECT_DIR$/my_app/views.py" afterPath="$PROJECT_DIR$/my_app/views.py" />
+=======
+      <change beforePath="$PROJECT_DIR$/my_app/models.py" afterPath="$PROJECT_DIR$/my_app/models.py" />
+>>>>>>> parent of 79ba055... 基本模型有了
 =======
       <change beforePath="$PROJECT_DIR$/my_app/models.py" afterPath="$PROJECT_DIR$/my_app/models.py" />
 >>>>>>> parent of 79ba055... 基本模型有了
@@ -32,6 +36,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="189">
               <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
 =======
@@ -46,6 +51,10 @@
             <state relative-caret-position="-657">
               <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+            <state relative-caret-position="609">
+              <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+>>>>>>> parent of 79ba055... 基本模型有了
               <folding />
             </state>
           </provider>
@@ -76,6 +85,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
               <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+<<<<<<< HEAD
               <folding />
             </state>
           </provider>
@@ -89,11 +99,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+>>>>>>> parent of 79ba055... 基本模型有了
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
 =======
@@ -134,10 +147,19 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> parent of 79ba055... 基本模型有了
               <folding />
+=======
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_app/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+>>>>>>> parent of 79ba055... 基本模型有了
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/base.html">
@@ -165,11 +187,19 @@
             <state relative-caret-position="457">
               <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_app/apps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> parent of 79ba055... 基本模型有了
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/about.html">
@@ -193,11 +223,19 @@
             <state relative-caret-position="787">
               <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="39" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_app/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> parent of 79ba055... 基本模型有了
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="about.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/static/my_app/about.css">
@@ -215,21 +253,30 @@
       </file>
       <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/static/my_app/home.css">
+=======
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/to_do_list/settings.py">
+>>>>>>> parent of 79ba055... 基本模型有了
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="819">
+              <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/static/my_app/home.css">
+=======
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_app/views.py">
+>>>>>>> parent of 79ba055... 基本模型有了
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="588">
+              <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -275,14 +322,20 @@
         <option value="$PROJECT_DIR$/my_app/migrations/static/my_app/base.css" />
         <option value="$PROJECT_DIR$/my_app/migrations/static/my_app/home.css" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/my_app/static/my_app/base.css" />
         <option value="$PROJECT_DIR$/to_do_list/urls.py" />
         <option value="$PROJECT_DIR$/my_app/tests.py" />
         <option value="$PROJECT_DIR$/my_app/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/my_app/models.py" />
         <option value="$PROJECT_DIR$/my_app/templates/base.html" />
+=======
+        <option value="$PROJECT_DIR$/my_app/templates/about.html" />
+>>>>>>> parent of 79ba055... 基本模型有了
         <option value="$PROJECT_DIR$/my_app/static/my_app/about.css" />
+        <option value="$PROJECT_DIR$/my_app/static/my_app/base.css" />
         <option value="$PROJECT_DIR$/my_app/static/my_app/home.css" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/my_app/urls.py" />
         <option value="$PROJECT_DIR$/my_app/templates/about.html" />
 <<<<<<< HEAD
@@ -292,10 +345,13 @@
         <option value="$PROJECT_DIR$/my_app/static/my_app/about.css" />
         <option value="$PROJECT_DIR$/my_app/static/my_app/base.css" />
         <option value="$PROJECT_DIR$/my_app/static/my_app/home.css" />
+=======
+>>>>>>> parent of 79ba055... 基本模型有了
         <option value="$PROJECT_DIR$/my_app/templates/base.html" />
         <option value="$PROJECT_DIR$/my_app/templates/home.html" />
         <option value="$PROJECT_DIR$/my_app/urls.py" />
         <option value="$PROJECT_DIR$/to_do_list/urls.py" />
+<<<<<<< HEAD
 >>>>>>> parent of 79ba055... 基本模型有了
 =======
         <option value="$PROJECT_DIR$/my_app/templates/home.html" />
@@ -303,6 +359,8 @@
 =======
         <option value="$PROJECT_DIR$/my_app/templates/home.html" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+>>>>>>> parent of 79ba055... 基本模型有了
         <option value="$PROJECT_DIR$/my_app/views.py" />
         <option value="$PROJECT_DIR$/my_app/tests.py" />
         <option value="$PROJECT_DIR$/my_app/models.py" />
@@ -410,6 +468,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="581" y="0" width="859" height="900" extended-state="6" />
 =======
     <frame x="692" y="0" width="748" height="900" extended-state="6" />
@@ -427,11 +486,18 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14099783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
 >>>>>>> parent of 79ba055... 基本模型有了
+=======
+    <frame x="958" y="0" width="482" height="900" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14099783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+>>>>>>> parent of 79ba055... 基本模型有了
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -445,6 +511,9 @@
 =======
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> parent of 79ba055... 基本模型有了
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -695,6 +764,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -718,12 +788,19 @@
 =======
     <entry file="file://$PROJECT_DIR$/my_app/apps.py">
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/static/my_app/home.css">
+>>>>>>> parent of 79ba055... 基本模型有了
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -744,6 +821,12 @@
         <state relative-caret-position="21">
           <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
 >>>>>>> parent of 79ba055... 基本模型有了
+=======
+    <entry file="file://$PROJECT_DIR$/my_app/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+>>>>>>> parent of 79ba055... 基本模型有了
         </state>
       </provider>
     </entry>
@@ -754,6 +837,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -779,10 +863,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+    <entry file="file://$PROJECT_DIR$/to_do_list/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+>>>>>>> parent of 79ba055... 基本模型有了
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -808,6 +899,12 @@
         <state relative-caret-position="315">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+    <entry file="file://$PROJECT_DIR$/my_app/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+>>>>>>> parent of 79ba055... 基本模型有了
           <folding />
         </state>
       </provider>
@@ -820,6 +917,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -845,12 +943,19 @@
         <state relative-caret-position="63">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+    <entry file="file://$PROJECT_DIR$/my_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+>>>>>>> parent of 79ba055... 基本模型有了
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -868,10 +973,15 @@
         <state relative-caret-position="210">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+        <state relative-caret-position="189">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+>>>>>>> parent of 79ba055... 基本模型有了
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -897,12 +1007,19 @@
         <state relative-caret-position="-657">
           <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+    <entry file="file://$PROJECT_DIR$/my_app/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> parent of 79ba055... 基本模型有了
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/tests.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -920,10 +1037,15 @@
         <state relative-caret-position="787">
           <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="39" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+        <state relative-caret-position="63">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+>>>>>>> parent of 79ba055... 基本模型有了
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -949,12 +1071,19 @@
         <state relative-caret-position="457">
           <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
 >>>>>>> parent of 6408944... 添加输入功能（有bug）
+=======
+    <entry file="file://$PROJECT_DIR$/my_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+>>>>>>> parent of 79ba055... 基本模型有了
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -971,6 +1100,11 @@
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="256">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding />
+>>>>>>> parent of 79ba055... 基本模型有了
 =======
         <state relative-caret-position="256">
           <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />

@@ -1,6 +1,14 @@
 from django.shortcuts import render,redirect
+<<<<<<< HEAD
 from .models import One_task
 # Create your views here.
+=======
+
+# Create your views here.
+my_database = [
+{'添加大类': "管理工作"}
+]
+>>>>>>> parent of 79ba055... 基本模型有了
 
 def home(request):
     if request.method == "POST":
@@ -8,6 +16,10 @@ def home(request):
         if request.POST['添加计划'] == '':
             return render(request, "home.html", {'警告':'请输入内容'})
         else:
+<<<<<<< HEAD
+=======
+            my_database.append({'添加大类': request.POST["添加计划"]})
+>>>>>>> parent of 79ba055... 基本模型有了
             content = {"清单": my_database}
             return render(request, "home.html", content)
     elif request.method == "GET":
@@ -16,11 +28,12 @@ def home(request):
 
 
 
-def edit(request, plan_id):
+def edit(request):
     return render(request, "edit.html")
 
 
 def about(request):
+<<<<<<< HEAD
 
     if request.method == "POST":
         if request.POST['添加计划'] == '':
@@ -37,6 +50,11 @@ def about(request):
         return render(request, "about.html", content)
 
 
+=======
+    return render(request, "about.html")
+
+
+>>>>>>> parent of 79ba055... 基本模型有了
 def delete(request, forloop_counter):
     my_database.pop(int(forloop_counter)-1)
     return redirect("my_app:主页")
