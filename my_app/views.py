@@ -45,14 +45,22 @@ def about(request):
             content = {"清单": One_task.objects.all()}
             return render(request, "about.html", content)
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 6408944... 添加输入功能（有bug）
     if request.method == "GET":
         content = {"清单": One_task.objects.all()}
         return render(request, "about.html", content)
 
 
+<<<<<<< HEAD
 =======
     return render(request, "about.html")
 
+=======
+>>>>>>> parent of 6408944... 添加输入功能（有bug）
 
 >>>>>>> parent of 79ba055... 基本模型有了
 def delete(request, forloop_counter):
