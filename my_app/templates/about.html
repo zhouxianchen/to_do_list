@@ -4,8 +4,8 @@
       <br>
       <h4>一款小巧、简洁的展示系统，帮你展示近期工作计划。</h4>
 
-
-    <form id="form_input" action="/msggate/" method = "post">
+{{警告}}
+    <form id="form_input" action="" method = "POST">
          <div class="form-row">
 
         {%csrf_token %}
@@ -13,7 +13,7 @@
         大类 <input class="form-control" type="text " name = "big_subject" /> <br>
           </div>
     <div class="col">
-        工作 <input  class="form-control"type="text" name = "task" /> <br>
+        工作 <input  class="form-control" type="text" name = "task" /> <br>
                  </div>
     <div class="col">
         具体 <input  class="form-control" type="text" name = "sub_task" /> <br>
