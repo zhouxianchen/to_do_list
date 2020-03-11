@@ -1,9 +1,6 @@
 from django.shortcuts import render,redirect
-
+from .models import One_task
 # Create your views here.
-my_database = [
-{'添加大类': "管理工作"}
-]
 
 def home(request):
     global my_database
@@ -26,7 +23,7 @@ def edit(request):
 
 
 def about(request):
-<<<<<<< HEAD
+
     if request.method == "POST":
         if request.POST['添加计划'] == '':
             content = {"清单": One_task.objects.all()}
@@ -43,9 +40,7 @@ def about(request):
         content = {"清单": One_task.objects.all()}
         return render(request, "about.html", content)
 
-=======
     return render(request, "about.html")
->>>>>>> parent of 79ba055... 基本模型有了
 
 
 def delete(request, forloop_counter):
