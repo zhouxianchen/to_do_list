@@ -3,13 +3,11 @@ from .models import One_task
 # Create your views here.
 
 def home(request):
-    global my_database
     if request.method == "POST":
 
         if request.POST['添加计划'] == '':
             return render(request, "home.html", {'警告':'请输入内容'})
         else:
-            my_database.append({'添加大类': request.POST["添加计划"]})
             content = {"清单": my_database}
             return render(request, "home.html", content)
     elif request.method == "GET":
@@ -18,7 +16,7 @@ def home(request):
 
 
 
-def edit(request):
+def edit(request, plan_id):
     return render(request, "edit.html")
 
 
@@ -34,16 +32,9 @@ def about(request):
             content = {"清单": One_task.objects.all()}
             return render(request, "about.html", content)
 
-
-
     if request.method == "GET":
         content = {"清单": One_task.objects.all()}
         return render(request, "about.html", content)
-
-<<<<<<< HEAD
-    return render(request, "about.html")
-=======
->>>>>>> parent of 6408944... 添加输入功能（有bug）
 
 
 def delete(request, forloop_counter):
