@@ -1,30 +1,31 @@
 from django.shortcuts import render,redirect
-from .models import One_task
+
 # Create your views here.
-
-
+my_database = [
+{'添加大类': "管理工作"}
+]
 
 def home(request):
     global my_database
     if request.method == "POST":
+
         if request.POST['添加计划'] == '':
-            content = {"清单": One_task.objects.all()}
-            return render(request, "home.html", {'警告':'请输入内容'}, content)
+            return render(request, "home.html", {'警告':'请输入内容'})
         else:
-            a_row = One_task(big_subject=request.POST['添加计划'], task="学法规 ", sub_task="实施考核", time="2019", jindu="30%")
-            a_row.save()
-            content = {"清单": One_task.objects.all()}
+            my_database.append({'添加大类': request.POST["添加计划"]})
+            content = {"清单": my_database}
             return render(request, "home.html", content)
     elif request.method == "GET":
-        content = {"清单": One_task.objects.all()}
+        content = {"清单": my_database}
         return render(request, "home.html", content)
 
 
 
-def edit(request, plan_id):
+def edit(request):
     return render(request, "edit.html")
 
 def about(request):
+<<<<<<< HEAD
     if request.method == "POST":
         # request.POST['big_subject']
         if request.POST['添加大类'] == "":
@@ -39,6 +40,9 @@ def about(request):
         content = {"清单": One_task.objects.all()}
         return render(request, "about.html", content)
 
+=======
+    return render(request, "about.html")
+>>>>>>> parent of 79ba055... 基本模型有了
 
 # def about(request):
 #     if request.method == "POST":
@@ -60,6 +64,6 @@ def about(request):
 #         return render(request, "about.html", content)
 
 
-def delete(request, plan_id):
-    One_task.objects.get(id=plan_id).delete()
-    return redirect("my_app:关于")
+def delete(request, forloop_counter):
+    my_database.pop(int(forloop_counter)-1)
+    return redirect("my_app:主页")
