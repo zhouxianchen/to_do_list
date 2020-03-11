@@ -61,11 +61,11 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item {% block 主页高亮 %}{% endblock 主页高亮 %}">
-        <a class="nav-link" href="{% url 'my_app:主页' %}">待办清单</a>
+        <a class="nav-link" href="{% url 'my_app:主页' %}">前端展示</a>
       </li>
 
               <li class="nav-item {% block 关于高亮 %}{% endblock 关于高亮 %}">
-        <a class="nav-link" href="{% url 'my_app:关于' %}">关于本站</a>
+        <a class="nav-link" href="{% url 'my_app:关于' %}">后台管理</a>
     </ul>
     <form class="form-inline mt-2 mt-md-0" method="POST" action="">
       {% csrf_token %}

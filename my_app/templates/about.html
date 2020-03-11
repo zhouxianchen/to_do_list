@@ -2,7 +2,71 @@
 {% load static %}
 {% block 主体 %}
       <br>
-      <h4>一款小巧、简1洁的日程展示系统，帮你展示日常事务。</h4>
+      <h4>一款小巧、简洁的展示系统，帮你展示近期工作计划。</h4>
+
+
+    <form id="form_input" action="/msggate/" method = "post">
+         <div class="form-row">
+
+        {%csrf_token %}
+                <div class="col">
+        大类 <input class="form-control" type="text " name = "big_subject" /> <br>
+          </div>
+    <div class="col">
+        工作 <input  class="form-control"type="text" name = "task" /> <br>
+                 </div>
+    <div class="col">
+        具体 <input  class="form-control" type="text" name = "sub_task" /> <br>
+                 </div>
+    <div class="col">
+        日期 <input  class="form-control" type="text" name = "time" /> <br>
+                 </div>
+    <div class="col">
+        进度 <input  class="form-control mr-sm-2" type="text" name = "jindu" /> <br>
+            </div>
+<button class="btn btn-primary" type="submit"   /> 存入数据 <br>
+
+             </div>
+
+    </form>
+
+
+
+
+
+<table class="table table-hover">
+
+  <thead class="thead-light">
+            <tr align="center">
+                <th scope="col">序号</th>
+              <th scope="col">工作类别</th>
+            <th scope="col">活动名称</th>
+            <th scope="col">具体项目</th>
+            <th scope="col">持续时间</th>
+            <th scope="col">工作进度</th>
+            </tr>
+  </thead>
+    {% for plan in 清单 %}
+    <tr>
+        <th scope="row"> {{forloop.counter}}</th>
+    <td rowspan="1">{{ plan.big_subject }}
+    </td>
+          <td rowspan="1">{{ plan.task }}
+    </td>
+           <td rowspan="1">{{ plan.sub_task }}
+    </td>
+          <td rowspan="1">{{ plan.time }}
+    </td>
+          <td rowspan="1">{{ plan.jindu }}
+    </td>
+        <td><a class= "text-info" href="{%url 'my_app:删除' plan.id %}"> 删除 </a>
+    </td>
+         <td><a class= "text-info" href="{%url 'my_app:编辑' plan.id %}"> 编辑 </a>
+    </td>
+
+    </tr>
+    {% endfor %}
+</table>
   {% endblock 主体 %}
 
 {% block my_title %}
@@ -13,3 +77,5 @@
 {% block 关于高亮 %}
 active
 {% endblock 关于高亮 %}
+
+
