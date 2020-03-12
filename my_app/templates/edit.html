@@ -8,19 +8,22 @@
          <div class="form-row">
         {%csrf_token %}
                 <div class="col">
-        大类 <select class="form-control" type="text " name = "big_subject" value= "{{current.big_subject}}"/> <br>
+        大类 <input class="form-control" type="text " name = "big_subject" value= "{{current.task.big_subject}}"/> <br>
           </div>
     <div class="col">
-        工作 <input  class="form-control"type="text" name = "task" value= "{{current.task}}"/> <br>
+        当前任务 <input  class="form-control" type="text" name = "task" value= "{{current.task}}"/> <br>
                  </div>
     <div class="col">
-        具体 <input  class="form-control" type="text" name = "sub_task" value= "{{current.sub_task}}"/> <br>
+        具体活动 <input  class="form-control" type="text" name = "activity" value= "{{current..name}}"/> <br>
                  </div>
     <div class="col">
-        日期 <input  class="form-control" type="text" name = "time" value= "{{ current.time }}"/> <br>
+        开始日期 <input  class="form-control" type="text" name = "start_time" value= "{{ current.start_time }}"/> <br>
                  </div>
     <div class="col">
-        进度 <input  class="form-control mr-sm-2" type="text" name = "jindu" value= " {{current.big_subject}} "/> <br>
+        结束日期 <input  class="form-control" type="text" name = "end_time" value= "{{ current.end_time }}"/> <br>
+                 </div>
+    <div class="col">
+        进度 <input  class="form-control mr-sm-2" type="text" name = "progress" value= " {{current.big_subject}} "/> <br>
             </div>
 <button class="btn btn-primary" type="submit"   /> 修改 <br>
 
