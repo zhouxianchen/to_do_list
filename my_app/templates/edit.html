@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}{% static 'my_app/home.css' %}{% endblock css %}
+
+{% block 主体 %}
+
+  <form id="form_edit" action="" method = "post">
+         <div class="form-row">
+        {%csrf_token %}
+                <div class="col">
+        大类 <select class="form-control" type="text " name = "big_subject" value= "{{current.big_subject}}"/> <br>
+          </div>
+    <div class="col">
+        工作 <input  class="form-control"type="text" name = "task" value= "{{current.task}}"/> <br>
+                 </div>
+    <div class="col">
+        具体 <input  class="form-control" type="text" name = "sub_task" value= "{{current.sub_task}}"/> <br>
+                 </div>
+    <div class="col">
+        日期 <input  class="form-control" type="text" name = "time" value= "{{ current.time }}"/> <br>
+                 </div>
+    <div class="col">
+        进度 <input  class="form-control mr-sm-2" type="text" name = "jindu" value= " {{current.big_subject}} "/> <br>
+            </div>
+<button class="btn btn-primary" type="submit"   /> 修改 <br>
+
+             </div>
+
+    </form>
+
+{% endblock 主体 %}

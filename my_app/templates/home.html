@@ -10,6 +10,7 @@
 
   <thead class="thead-light">
             <tr align="center">
+                <th scope="col">序号</th>
               <th scope="col">工作类别</th>
             <th scope="col">活动名称</th>
             <th scope="col">具体项目</th>
@@ -17,13 +18,20 @@
             <th scope="col">工作进度</th>
             </tr>
   </thead>
-    {% for plan in 清单 %}
+     {% for plan in 清单 %}
     <tr>
-        <th scope="row"> {{forloop.counter }}</th>
-    <td rowspan="1">{{ plan.添加大类 }}
+        <th scope="row"> {{forloop.counter}}</th>
+    <td rowspan="1">{{ plan.big_subject }}
     </td>
-        <td><a class= "text-info" href="{%url 'my_app:删除' forloop.counter %}"> 删除 </a>
+          <td rowspan="1">{{ plan.task }}
     </td>
+           <td rowspan="1">{{ plan.sub_task }}
+    </td>
+          <td rowspan="1">{{ plan.time }}
+    </td>
+          <td rowspan="1">{{ plan.jindu }}
+    </td>
+
     </tr>
     {% endfor %}
     <!--<tr ><td rowspan="6" valign="middle"> 管理工作</td>-->

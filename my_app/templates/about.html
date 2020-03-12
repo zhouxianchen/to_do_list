@@ -2,17 +2,20 @@
 {% load static %}
 {% block 主体 %}
       <br>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
       <h4>一款小巧、简洁的展示系统，帮你展示近期工作计划。</h4>
 
 
-    <form id="form_input" action="/msggate/" method = "post">
+    <form id="form_input" action="" method = "post">
          <div class="form-row">
 
         {%csrf_token %}
                 <div class="col">
-        大类 <input class="form-control" type="text " name = "big_subject" /> <br>
+        大类 <select class="form-control"  name = "big_subject">
+                    {% for key in select_form.BIG_CHOICES %}
+                    <option value="{{ key }}">{{  key }}</option>
+                    {% endfor %}
+                </select>
           </div>
     <div class="col">
         工作 <input  class="form-control"type="text" name = "task" /> <br>
@@ -46,6 +49,7 @@
             <th scope="col">具体项目</th>
             <th scope="col">持续时间</th>
             <th scope="col">工作进度</th>
+                <th scope="col" colspan="2"> 操作</th>
             </tr>
   </thead>
     {% for plan in 清单 %}
@@ -69,12 +73,7 @@
     </tr>
     {% endfor %}
 </table>
-=======
-      <h4>一款小巧、简1洁的日程展示系统，帮你展示日常事务。</h4>
->>>>>>> parent of 79ba055... 基本模型有了
-=======
-      <h4>一款小巧、简1洁的日程展示系统，帮你展示日常事务。</h4>
->>>>>>> parent of 79ba055... 基本模型有了
+
   {% endblock 主体 %}
 
 {% block my_title %}
