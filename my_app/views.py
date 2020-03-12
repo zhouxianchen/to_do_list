@@ -21,9 +21,9 @@ def home(request):
 def edit(request, act_id):
     if request.method == "POST":
         cur = Activity.objects.get(id=act_id)
-        cur.task.big_subject = request.POST['big_subject']
-        cur.task = request.POST['task']
-        cur.name =request.POST['activity']
+        cur.task.big_subject.name = request.POST['big_subject']
+        cur.task.name = request.POST['task']
+        cur.name = request.POST['activity']
         cur.start_time = request.POST['start_time']
         cur.end_time = request.POST['end_time']
         cur.progress = request.POST['progress']
