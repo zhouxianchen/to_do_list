@@ -18,9 +18,9 @@ def home(request):
 
 
 
-def edit(request, plan_id):
+def edit(request, act_id):
     if request.method == "POST":
-        cur = Activity.objects.get(id=plan_id)
+        cur = Activity.objects.get(id=act_id)
         cur.task.big_subject = request.POST['big_subject']
         cur.task = request.POST['task']
         cur.name =request.POST['activity']
@@ -31,7 +31,7 @@ def edit(request, plan_id):
         content = {"清单": Activity.objects.all()}
         return redirect("my_app:关于")
     elif request.method =="GET":
-        current_task = {"current": Activity.objects.get(id=plan_id)}
+        current_task = {"current": Activity.objects.get(id=act_id)}
         return render(request, "edit.html", current_task)
 
 
