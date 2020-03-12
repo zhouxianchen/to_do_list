@@ -62,3 +62,8 @@ def about(request):
 def delete(request, activity_id):
     Activity.objects.get(id=activity_id).delete()
     return redirect("my_app:关于")
+
+
+def reg(request):
+    return render(request, 'reg.html')
+
