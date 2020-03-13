@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Big_subject(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -9,7 +10,8 @@ class Big_subject(models.Model):
 
 
 class Task(models.Model):
-    name = models.CharField(max_length=50)
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50, unique=True)
     big_subject = models.ForeignKey(to='Big_subject', on_delete=models.CASCADE, blank=True)
 
     def __str__(self):
