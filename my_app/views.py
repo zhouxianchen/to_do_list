@@ -20,21 +20,22 @@ def home(request):
 
 
 
-def edit(request, act_id):
+def edit(request, activity_id):
 
     if request.method == "POST":
-        cur_obj = Activity.objects.get(id=act_id)
+        cur_obj = Activity.objects.get(id=activity_id)
         form_obj = TaskForm(request.POST)
         if form_obj.is_valid():
             cur_obj.name = form_obj.cleaned_data['activity']
-            cur_obj.task.big_subject = form_obj.cleaned_data['big_subject']
-            cur_obj.task =  form_obj.cleaned_data['task']
+            cur_obj.task.big_subject_id = form_obj.cleaned_data['big_subject']
+            cur_obj.task_id = form_obj.cleaned_data['task']
             cur_obj.start_time = form_obj.cleaned_data['start_time']
             cur_obj.end_time = form_obj.cleaned_data['end_time']
             cur_obj.progress = form_obj.cleaned_data['progress']
+            cur_obj.save()
             return redirect("my_app:关于")
     elif request.method == "GET":
-        cur_obj = Activity.objects.get(id=act_id)
+        cur_obj = Activity.objects.get(id=activity_id)
         form_obj = TaskForm(initial={'big_subject': cur_obj.task.big_subject.name,
                                      'task': cur_obj.task.name,
                                      'activity': cur_obj.name,
@@ -51,13 +52,13 @@ def about(request):
         form_obj = TaskForm(request.POST)
         if form_obj.is_valid():
             name = form_obj.cleaned_data['activity']
-            big_subject = form_obj.cleaned_data['big_subject']
-            print(big_subject,"是bigsubject值")
+            big_subject_1 = form_obj.cleaned_data['big_subject']
+            print(big_subject_1,"是bigsubject值")
             task = form_obj.cleaned_data['task']
             start_time = form_obj.cleaned_data['start_time']
             end_time = form_obj.cleaned_data['end_time']
             progress = form_obj.cleaned_data['progress']
-            big_subject_obj = Big_subject.objects.get_or_create(id=big_subject)
+            big_subject_obj = Big_subject.objects.get_or_create(id=big_subject_1)
             task_obj = Task.objects.get_or_create(name=task, big_subject=big_subject_obj[0])
             print(task_obj[0].big_subject.name, "对象的")
             Activity.objects.get_or_create(name=name, task=task_obj[0], start_time=start_time,end_time=end_time, progress=progress)
@@ -77,6 +78,7 @@ def about(request):
 
 
 def delete(request, activity_id):
+
     Activity.objects.get(id=activity_id).delete()
     return redirect("my_app:关于")
 
