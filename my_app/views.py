@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Big_subject, Task, Activity
+from .forms import *
 # Create your views here.
 
 # Create your views here.
@@ -21,42 +22,64 @@ def home(request):
 def edit(request, act_id):
     if request.method == "POST":
         cur = Activity.objects.get(id=act_id)
-        cur.task.big_subject.name = request.POST['big_subject']
-        cur.task.name = request.POST['task']
-        cur.name = request.POST['activity']
-        cur.start_time = request.POST['start_time']
-        cur.end_time = request.POST['end_time']
-        cur.progress = request.POST['progress']
-        cur.save()
-        content = {"清单": Activity.objects.all()}
-        return redirect("my_app:关于")
+        bf = BigsubForm(request.POST, instance=cur.task.big_subject)
+        tf = TaskForm(request.POST, instance=cur.task)
+        af = ActivityForm(request.POST, instance=cur)
+        # af = ActivityForm(request.POST)
+        if tf.is_valid() and af.is_valid() and bf.is_valid():
+            # cur.task.big_subject.name = tf.cleaned_data(['big_subject'])
+            # cur.task.name = tf.cleaned_data['name']
+            # cur.name = af.cleaned_data['activity']
+            # cur.start_time = af.cleaned_data['start_time']
+            # cur.end_time = af.cleaned_data['end_time']
+            # cur.progress = af.cleaned_data['progress']
+            # cur.save()
+            bform = bf.save(commit=False)
+            bf.save()
+            tform = tf.save(commit=False)
+            tform.big_subject = bform
+            tf.save()
+            aform = af.save(commit=False)
+            aform.task = tform
+            af.save()
+            # bf.save()
+            return redirect("my_app:关于")
+        else:
+            return redirect("my_app:关于")
     elif request.method =="GET":
-        current_task = {"current": Activity.objects.get(id=act_id)}
+        cur = Activity.objects.get(id=act_id)
+        tf = TaskForm(instance=cur.task)
+        bf = BigsubForm(instance=cur.task.big_subject)
+        af = ActivityForm(instance=cur)
+
+        current_task = {'tf': tf, "af": af, "bf": bf}
         return render(request, "edit.html", current_task)
 
 
 def about(request):
-
     if request.method == "POST":
-        new_big_subject_id = request.POST['big_subject']
-        new_task_id = request.POST['task']
-        activity = request.POST['activity']
-        start_time = request.POST['start_time']
-        end_time = request.POST['end_time']
-        progress = request.POST['progress']
-
-        task_row = Task(name=new_task_id, big_subject_id=new_big_subject_id)
-        task_row.save()
-        act_row = Activity(name=activity, task_id=new_task_id, start_time=start_time, end_time=end_time, progress=progress)
-        act_row.save()
-        content = {"清单": Activity.objects.all()}
-        return render(request, "about.html", content)
-
+        bf = BigsubForm(request.POST)
+        tf = TaskForm(request.POST)
+        af = ActivityForm(request.POST)
+        if tf.is_valid() and af.is_valid() and bf.is_valid():
+            bform = bf.save(commit=False)
+            bf.save()
+            tform = tf.save(commit=False)
+            tform.big_subject = bform
+            tf.save()
+            aform = af.save(commit=False)
+            aform.task = tform
+            af.save()
+        current_task = {'tf': tf, "af": af, "bf": bf}
+        return render(request, "about.html", current_task)
     if request.method == "GET":
-        content = {"清单": Activity.objects.all()}
+        bf = BigsubForm()
+        tf = TaskForm()
+        af = ActivityForm()
+        if tf.is_valid() and af.is_valid() and bf.is_valid():
+            content = {'tf': tf, "af": af, "bf": bf}
         return render(request, "about.html", content)
 
-    return render(request, "about.html")
 
 
 def delete(request, activity_id):

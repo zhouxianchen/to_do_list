@@ -7,13 +7,16 @@ class TaskForm(ModelForm):
     class Meta:
         model = Task
         fields = ['name', 'big_subject']
-
+        widgets = {
+            'name': widgets.TextInput(attrs={"class": "form-control"}),
+            'big_subject': widgets.TextInput(attrs={"class": "form-control"})
+        }
 
 
 class BigsubForm(ModelForm):
     class Meta:
         model = Big_subject
-        fields = ('name')
+        fields = ['name']
         widgets = {
             'name': widgets.TextInput(attrs={"class": "form-control"})
         }
@@ -26,18 +29,18 @@ class ActivityForm(ModelForm):
         widgets = {
             'name': widgets.TextInput(attrs={"class": "form-control"}),
             'task': widgets.TextInput(attrs={"class": "form-control"}),
-            'start_time': DatePickerInput(
-                options={
-                    "format": "mm/dd/yyyy",
-                    "autoclose": True
-                }
-            ),
-            'end_time': DatePickerInput(
-                options={
-                    "format": "mm/dd/yyyy",
-                    "autoclose": True
-                }
-            ),
+            # 'start_time': DatePickerInput(
+            #     options={
+            #         "format": "mm/dd/yyyy",
+            #         "autoclose": True
+            #     }
+            # ),
+            # 'end_time': DatePickerInput(
+            #     options={
+            #         "format": "mm/dd/yyyy",
+            #         "autoclose": True
+            #     }
+            # ),
             'progress': widgets.TextInput(attrs={"class": "form-control"})
         }
 

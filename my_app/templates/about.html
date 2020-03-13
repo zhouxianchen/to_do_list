@@ -8,31 +8,11 @@
 
     <form id="form_input" action="" method = "post">
          <div class="form-row">
-
         {%csrf_token %}
-                <div class="col">
-        大类 <select class="form-control"  name = "big_subject">
-                    {% for key in select_form.BIG_CHOICES %}
-                    <option value="{{ key }}">{{  key }}</option>
-                    {% endfor %}
-                </select>
-          </div>
-    <div class="col">
-        工作 <input  class="form-control"type="text" name = "task" /> <br>
-                 </div>
-    <div class="col">
-        具体 <input  class="form-control" type="text" name = "sub_task" /> <br>
-                 </div>
-    <div class="col">
-        日期 <input  class="form-control" type="text" name = "time" /> <br>
-                 </div>
-    <div class="col">
-        进度 <input  class="form-control mr-sm-2" type="text" name = "jindu" /> <br>
-            </div>
-<button class="btn btn-primary" type="submit"   /> 存入数据 <br>
-
-             </div>
-
+             {{ tf }}
+             {{ bf }}
+             {{ af }}
+         </div>
     </form>
 
 
@@ -65,7 +45,7 @@
     </td>
           <td rowspan="1">{{ activity.end_time }}
     </td>
-          <td rowspan="1">{{ activity.progress }}
+          <td rowspan="1" >{{ activity.progress }}
     </td>
         <td><a class= "text-info" href="{%url 'my_app:删除' activity.id %}"> 删除 </a>
     </td>

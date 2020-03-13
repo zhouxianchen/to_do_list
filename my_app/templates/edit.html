@@ -5,26 +5,17 @@
 {% block 主体 %}
 
   <form id="form_edit" action="" method = "post">
-         <div class="form-row">
+         <div class="form-rol">
         {%csrf_token %}
                 <div class="col">
-        大类 <input class="form-control" type="text " name = "big_subject" value= "{{current.task.big_subject}}"/> <br>
+        大类 {{ bf.name }} <br>
           </div>
+    <!--<div class="col">-->
+        <!--当前任务 {{ af.task.name}} <br>-->
+    <!--</div>-->
     <div class="col">
-        当前任务 <input  class="form-control" type="text" name = "task" value= "{{current.task}}"/> <br>
+        具体活动 {{ af }} <br>
                  </div>
-    <div class="col">
-        具体活动 <input  class="form-control" type="text" name = "activity" value= "{{current..name}}"/> <br>
-                 </div>
-    <div class="col">
-        开始日期 <input  class="form-control" type="text" name = "start_time" value= "{{ current.start_time }}"/> <br>
-                 </div>
-    <div class="col">
-        结束日期 <input  class="form-control" type="text" name = "end_time" value= "{{ current.end_time }}"/> <br>
-                 </div>
-    <div class="col">
-        进度 <input  class="form-control mr-sm-2" type="text" name = "progress" value= " {{current.big_subject}} "/> <br>
-            </div>
 <button class="btn btn-primary" type="submit"   /> 修改 <br>
 
              </div>
