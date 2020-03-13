@@ -9,7 +9,30 @@
     <form id="form_input" action="" method = "post">
          <div class="form-row">
         {%csrf_token %}
-             {{ form }}
+             <div class="rol">
+                 {{ form.big_subject.label }}
+                 {{ form.big_subject }}
+             </div> <br>
+             <div class="rol">
+                 {{ form.task.label }}
+                 {{ form.task }}
+             </div> <br>
+             <div class="rol">
+                 {{ form.activity.label }}
+                 {{ form.activity}}
+             </div> <br>
+             <div class="rol">
+                 {{ form.start_time.label }}
+                 {{ form.start_time }}
+             </div> <br>
+             <div class="rol">
+                 {{ form.end_time.label }}
+                 {{ form.end_time }}
+             </div> <br>
+             <div class="rol">
+                 {{ form.progress.label }}
+                 {{ form.progress }}
+             </div> <br>
              <button class="btn btn-primary" type="submit"   /> 添加数据 <br>
          </div>
     </form>
@@ -23,18 +46,18 @@
   <thead class="thead-light">
             <tr align="center">
                 <th scope="col">序号</th>
-              <th scope="col">工作类别</th>
-            <th scope="col">活动名称</th>
-            <th scope="col">具体项目</th>
-            <th scope="col">持续时间</th>
-            <th scope="col">工作进度</th>
+                <th scope="col">工作类别</th>
+                <th scope="col">活动名称</th>
+                <th scope="col">具体项目</th>
+                <th scope="col">持续时间</th>
+                <th scope="col">工作进度</th>
                 <th scope="col" colspan="2"> 操作</th>
             </tr>
   </thead>
     {% for activity in all_act %}
     <tr>
         <th scope="row"> {{forloop.counter}}</th>
-    <td rowspan="1">{{ activity.task.big_subject }}
+    <td rowspan="1">{{ activity.task }}
     </td>
           <td rowspan="1">{{ activity.task }}
     </td>

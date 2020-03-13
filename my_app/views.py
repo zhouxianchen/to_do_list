@@ -52,18 +52,24 @@ def about(request):
         if form_obj.is_valid():
             name = form_obj.cleaned_data['activity']
             big_subject = form_obj.cleaned_data['big_subject']
+            print(big_subject,"是bigsubject值")
             task = form_obj.cleaned_data['task']
             start_time = form_obj.cleaned_data['start_time']
             end_time = form_obj.cleaned_data['end_time']
             progress = form_obj.cleaned_data['progress']
-            task_obj = Task.objects.get_or_create(name=task, big_subject_id=big_subject)
-            Activity.objects.create(name=name, task=task_obj, start_time=start_time,end_time=end_time,progress=progress)
+            big_subject_obj = Big_subject.objects.get_or_create(id=big_subject)
+            task_obj = Task.objects.get_or_create(name=task, big_subject=big_subject_obj[0])
+            print(task_obj[0].big_subject.name, "对象的")
+            Activity.objects.get_or_create(name=name, task=task_obj[0], start_time=start_time,end_time=end_time, progress=progress)
             all_act = Activity.objects.all()
             content = {'form': form_obj, 'all_act': all_act}
         return render(request, "about.html", content)
     if request.method == "GET":
         form_obj = TaskForm()
         all_act = Activity.objects.all()
+        print('='*10)
+        for i in all_act:
+            print(i.task.big_subject)
         content = {'form': form_obj, 'all_act': all_act}
         return render(request, "about.html", content)
 
