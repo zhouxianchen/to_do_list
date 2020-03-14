@@ -7,8 +7,14 @@ from my_app.models import Task, Big_subject, Activity
 class TaskForm(forms.Form):
     big_subject = forms.ChoiceField(
         label='工作类别',
+<<<<<<< HEAD
         choices=((1, '管理工作'), (2, '后装工作'), (4, '政治工作')
     ))
+=======
+        choices=((1, '管理工作'), (2, '后装工作'), (4, '政治工作')),
+        initial=1,
+    )
+>>>>>>> parent of 0a6ebc7... 具有完整功能的版本(除了查找，时间，select)
     task = forms.CharField(label="活动名称", widget=widgets.TextInput(attrs={"class": "form_control"}))
     activity = forms.CharField(label="活动分工", widget=widgets.TextInput(attrs={"class":"form_control"}))
     start_time = forms.DateField(label="开展时间", widget=widgets.TextInput(attrs={"class":"form_control"}))
