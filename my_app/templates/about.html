@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% block extrahead %}   {# Extra Resources Start #}
+   {{ form.media }}        {# Form required JS and CSS #}
+   {% endblock %}          {# Extra Resources End #}
+
 {% block 主体 %}
       <br>
 
@@ -55,7 +59,8 @@
                 <th scope="col">工作类别</th>
                 <th scope="col">活动名称</th>
                 <th scope="col">具体项目</th>
-                <th scope="col">持续时间</th>
+                <th scope="col">开始时间</th>
+                <th scope="col">结束时间</th>
                 <th scope="col">工作进度</th>
                 <th scope="col" colspan="2"> 操作</th>
             </tr>
@@ -85,6 +90,8 @@
 </table>
 
   {% endblock 主体 %}
+
+
 
 {% block my_title %}
       <br>

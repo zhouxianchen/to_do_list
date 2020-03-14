@@ -1,4 +1,9 @@
 {% load static %}
+{% load bootstrap3 %}       {# imports bootstrap3 #}
+   {% bootstrap_css %}         {# Embeds Bootstrap CSS #}
+   {% bootstrap_javascript %}  {# Embeds Bootstrap JS #}
+   {% block extrahead %}       {# Embeds Extra Resources #}
+   {% endblock %}              {# Ends Extra Resources #}
 <!doctype html>
 <html lang="en">
   <head>

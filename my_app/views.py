@@ -26,11 +26,13 @@ def edit(request, activity_id):
         form_obj = TaskForm(request.POST)
         if form_obj.is_valid():
             cur_obj.name = form_obj.cleaned_data['activity']
-            cur_obj.task.big_subject_id = form_obj.cleaned_data['big_subject']
-            cur_obj.task_id = form_obj.cleaned_data['task']
+            cur_obj.task.big_subject.name = form_obj.cleaned_data['big_subject']
+            cur_obj.task.name= form_obj.cleaned_data['task']
             cur_obj.start_time = form_obj.cleaned_data['start_time']
             cur_obj.end_time = form_obj.cleaned_data['end_time']
             cur_obj.progress = form_obj.cleaned_data['progress']
+            cur_obj.task.big_subject.save()
+            cur_obj.task.save()
             cur_obj.save()
             return redirect("my_app:关于")
     elif request.method == "GET":
@@ -52,12 +54,12 @@ def about(request):
         if form_obj.is_valid():
             name = form_obj.cleaned_data['activity']
             big_subject = form_obj.cleaned_data['big_subject']
-            print(big_subject,"bigsubject")
+            print(big_subject, "bigsubject")
             task = form_obj.cleaned_data['task']
             start_time = form_obj.cleaned_data['start_time']
             end_time = form_obj.cleaned_data['end_time']
             progress = form_obj.cleaned_data['progress']
-            big_subject_obj = Big_subject.objects.get_or_create(id=big_subject)
+            big_subject_obj = Big_subject.objects.get_or_create(name=big_subject)
             task_obj = Task.objects.get_or_create(name=task, big_subject=big_subject_obj[0])
             Activity.objects.get_or_create(name=name, task=task_obj[0], start_time=start_time,end_time=end_time, progress=progress)
             all_act = Activity.objects.all()
