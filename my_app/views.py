@@ -21,7 +21,6 @@ def home(request):
 
 
 def edit(request, activity_id):
-
     if request.method == "POST":
         cur_obj = Activity.objects.get(id=activity_id)
         form_obj = TaskForm(request.POST)
@@ -52,22 +51,13 @@ def about(request):
         form_obj = TaskForm(request.POST)
         if form_obj.is_valid():
             name = form_obj.cleaned_data['activity']
-<<<<<<< HEAD
             big_subject = form_obj.cleaned_data['big_subject']
             print(big_subject,"bigsubject")
-=======
-            big_subject_1 = form_obj.cleaned_data['big_subject']
-            print(big_subject_1,"是bigsubject值")
->>>>>>> parent of 0a6ebc7... 具有完整功能的版本(除了查找，时间，select)
             task = form_obj.cleaned_data['task']
             start_time = form_obj.cleaned_data['start_time']
             end_time = form_obj.cleaned_data['end_time']
             progress = form_obj.cleaned_data['progress']
-<<<<<<< HEAD
             big_subject_obj = Big_subject.objects.get_or_create(id=big_subject)
-=======
-            big_subject_obj = Big_subject.objects.get_or_create(id=big_subject_1)
->>>>>>> parent of 0a6ebc7... 具有完整功能的版本(除了查找，时间，select)
             task_obj = Task.objects.get_or_create(name=task, big_subject=big_subject_obj[0])
             Activity.objects.get_or_create(name=name, task=task_obj[0], start_time=start_time,end_time=end_time, progress=progress)
             all_act = Activity.objects.all()
