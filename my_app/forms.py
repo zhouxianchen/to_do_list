@@ -5,9 +5,10 @@ from my_app.models import Task, Big_subject, Activity
 
 
 class TaskForm(forms.Form):
-    big_subject = forms.ChoiceField(
+    big_subject = forms.CharField(
         label='工作类别',
-        choices=((1, '管理工作'), (2, '后装工作'), (4, '政治工作')
+        # choices=((1, '管理工作'), (2, '后装工作'), (4, '政治工作')),
+        widget=widgets.TextInput(attrs={"class": "form_control"},
     ))
     task = forms.CharField(label="活动名称", widget=widgets.TextInput(attrs={"class": "form_control"}))
     activity = forms.CharField(label="活动分工", widget=widgets.TextInput(attrs={"class":"form_control"}))
