@@ -68,8 +68,8 @@ def about(request):
         page_num = request.GET.get("page")
         page_num = int(page_num)
         per_page = 10
-        data_start = (page_num-1)*page_num
-        data_end = page_num *page_num
+        data_start = (page_num-1)*per_page
+        data_end = page_num *per_page
 
         form_obj = TaskForm()
         #total_page_number showed
