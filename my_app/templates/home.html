@@ -24,7 +24,8 @@
         <th scope="row"> {{forloop.counter}}</th>
     <td rowspan="1">{{ activity.task.big_subject }}
     </td>
-          <td rowspan="1">{{ activity.task }}
+          <td rowspan="1">
+              <a class="nav-link" href="{% url 'my_app:关于' %}">{{ activity.task }}</a>
     </td>
         <td rowspan="1">{{ activity.name }}
     </td>

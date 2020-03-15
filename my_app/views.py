@@ -65,9 +65,32 @@ def about(request):
         content = {'form': form_obj, 'all_act': all_act}
         return render(request, "about.html", content)
     if request.method == "GET":
+        page_num = request.GET.get("page")
+        page_num = int(page_num)
+        per_page = 10
+        data_start = (page_num-1)*page_num
+        data_end = page_num *page_num
+
         form_obj = TaskForm()
-        all_act = Activity.objects.all()
-        content = {'form': form_obj, 'all_act': all_act}
+        #total_page_number showed
+        max_page = 11
+        half_max_page = max_page//2
+        page_start = page_num - half_max_page
+        page_end = page_num + half_max_page
+
+        total_count = Activity.objects.count()
+        total_page, m = divmod(total_count, per_page)
+        if m:
+            total_page += 1
+        all_act = Activity.objects.all().order_by("start_time")[data_start:data_end]
+        html_str_list = []
+        for i in range(page_start, page_end+1):
+            tmp = '<li><a href="/about/?page={0}">{0}</a></li>'.format(i)
+            html_str_list.append(tmp)
+
+        html_list = "".join(html_str_list)
+
+        content = {'form': form_obj, 'all_act': all_act, "page_list": html_list}
         return render(request, "about.html", content)
 
 
