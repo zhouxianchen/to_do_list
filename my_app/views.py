@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Big_subject, Task, Activity
-from .forms import TaskForm
+from .forms import TaskForm, Task2Form
 from django.http import HttpResponse
 # Create your views here.
 
@@ -54,7 +54,6 @@ def about(request):
         if form_obj.is_valid():
             name = form_obj.cleaned_data['activity']
             big_subject = form_obj.cleaned_data['big_subject']
-            print(big_subject, "bigsubject")
             task = form_obj.cleaned_data['task']
             start_time = form_obj.cleaned_data['start_time']
             end_time = form_obj.cleaned_data['end_time']
@@ -62,14 +61,9 @@ def about(request):
             big_subject_obj = Big_subject.objects.get_or_create(name=big_subject)
             task_obj = Task.objects.get_or_create(name=task, big_subject=big_subject_obj[0])
             Activity.objects.get_or_create(name=name, task=task_obj[0], start_time=start_time,end_time=end_time, progress=progress)
-            all_act = Activity.objects.all()
-            content = {'form': form_obj, 'all_act': all_act}
-            return render(request, "about.html", content)
-        else:
-            all_act = Activity.objects.all()
-            content = {'form': form_obj, 'all_act': all_act}
-            return render(request, "about.html", content)
-
+        all_act = Activity.objects.all()
+        content = {'form': form_obj, 'all_act': all_act}
+        return render(request, "about.html", content)
     if request.method == "GET":
         form_obj = TaskForm()
         all_act = Activity.objects.all()
@@ -87,4 +81,41 @@ def delete(request, activity_id):
 
 def reg(request):
     return render(request, 'reg.html')
+
+
+def search(request):
+    if request.method == "POST":
+        form_obj = Task2Form(request.POST)
+        if form_obj.is_valid():
+            name = form_obj.cleaned_data['activity']
+            big_subject = form_obj.cleaned_data['big_subject']
+            task = form_obj.cleaned_data['task']
+            start_time = form_obj.cleaned_data['start_time']
+            end_time = form_obj.cleaned_data['end_time']
+            progress = form_obj.cleaned_data['progress']
+            select_dict = dict()
+            if big_subject:
+                big_sub_obj = Big_subject.objects.filter(name=big_subject).first()
+                select_dict['task__big_subject'] = big_sub_obj
+            if task:
+                task = Task.objects.filter(name__contains=task)
+                select_dict['task__in'] = task
+            if name:
+                select_dict['name__contains'] = name
+            if start_time:
+                select_dict['start_time__gt'] = start_time
+            if end_time:
+                select_dict['end_time__lt'] = end_time
+            if progress:
+                select_dict['progress'] = progress
+            act_list = Activity.objects.filter(**select_dict)
+            content = {'form': form_obj, 'act_list': act_list}
+            return render(request, "search.html", content)
+
+    if request.method == "GET":
+        form_obj = Task2Form()
+        content = {'form': form_obj}
+        return render(request, "search.html", content)
+
+
 
