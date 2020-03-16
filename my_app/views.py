@@ -66,31 +66,34 @@ def about(request):
         return render(request, "about.html", content)
     if request.method == "GET":
         page_num = request.GET.get("page")
-        page_num = int(page_num)
+        if page_num:
+            page_num = int(page_num)
+        else: page_num = 1
         per_page = 10
         data_start = (page_num-1)*per_page
         data_end = page_num *per_page
 
         form_obj = TaskForm()
         #total_page_number showed
-        max_page = 11
+        max_page = 7
         half_max_page = max_page//2
-        page_start = page_num - half_max_page
-        page_end = page_num + half_max_page
-
         total_count = Activity.objects.count()
         total_page, m = divmod(total_count, per_page)
+        page_start = max(page_num - half_max_page, 1)
+        page_end = min(page_num + half_max_page, total_page+1)
         if m:
             total_page += 1
         all_act = Activity.objects.all().order_by("start_time")[data_start:data_end]
         html_str_list = []
+        html_str_list.append('<li><a href="/about/?page={0}">首页</a></li>'.format(1))
         for i in range(page_start, page_end+1):
             tmp = '<li><a href="/about/?page={0}">{0}</a></li>'.format(i)
             html_str_list.append(tmp)
-
+        html_str_list.append('<li><a href="/about/?page={0}">尾页</a></li>'.format(total_page))
         html_list = "".join(html_str_list)
-
-        content = {'form': form_obj, 'all_act': all_act, "page_list": html_list}
+        former_page = max(page_num-1,1)
+        next_page = min(page_num+1, total_page)
+        content = {'form': form_obj, 'all_act': all_act, "page_list": html_list, "former_page": former_page, "next_page": next_page}
         return render(request, "about.html", content)
 
 
@@ -103,7 +106,10 @@ def delete(request, activity_id):
 
 
 def reg(request):
-    return render(request, 'reg.html')
+    if request.method == "GET":
+        a = request.GET.get("page")
+        content = {'a': a}
+    return render(request, 'reg.html', content)
 
 
 def search(request):
