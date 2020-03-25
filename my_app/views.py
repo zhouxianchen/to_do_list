@@ -1,7 +1,12 @@
 from django.shortcuts import render,redirect
+<<<<<<< HEAD
 from .models import Big_subject, Task, Activity
 from .forms import TaskForm, Task2Form
 from django.http import HttpResponse
+=======
+from .models import One_task
+from .forms import OneForm
+>>>>>>> new_db_with_forms
 # Create your views here.
 
 # Create your views here.
@@ -19,6 +24,7 @@ def home(request):
         return render(request, "home.html", content)
 
 
+<<<<<<< HEAD
 
 def edit(request, activity_id):
     if request.method == "POST":
@@ -47,8 +53,45 @@ def edit(request, activity_id):
         current_task = {'current_form': form_obj}
         return render(request, "edit.html", current_task)
 
+=======
+def edit(request, plan_id):
+    if request.method == "POST":
+        form = OneForm(request.POST)
+        if form.is_valid():
+            cur = One_task.objects.get(id=plan_id)
+            cur.big_subject=form.cleaned_data['big_subject']
+            cur.task = form.cleaned_data['task']
+            cur.sub_task = form.cleaned_data['sub_task']
+            cur.time = form.cleaned_data['time']
+            cur.jindu = form.cleaned_data['jindu']
+            cur.save()
+            return redirect("my_app:关于")
+    elif request.method =="GET":
+        form = OneForm()
+        current_task = {"current": One_task.objects.get(id=plan_id), "form": form}
+        return render(request, "edit.html", current_task)
+
+# def edit(request, plan_id):
+#     if request.method == "POST":
+#         cur =One_task.objects.get(id=plan_id)
+#         cur.big_subject =request.POST['big_subject']
+#         cur.task = request.POST['task']
+#         cur.sub_task =request.POST['sub_task']
+#         cur.time = request.POST['time']
+#         cur.jindu = request.POST['jindu']
+#         cur.save()
+#         content = {"清单": One_task.objects.all()}
+#         return redirect("my_app:关于")
+#     elif request.method =="GET":
+#         current_task = {"current": One_task.objects.get(id=plan_id)}
+#         return render(request, "edit.html", current_task)
+
+
+
+>>>>>>> new_db_with_forms
 def about(request):
     if request.method == "POST":
+<<<<<<< HEAD
         form_obj = TaskForm(request.POST)
         if form_obj.is_valid():
             name = form_obj.cleaned_data['activity']
@@ -62,6 +105,33 @@ def about(request):
             Activity.objects.get_or_create(name=name, task=task_obj[0], start_time=start_time,end_time=end_time, progress=progress)
         all_act = Activity.objects.all()
         content = {'form': form_obj, 'all_act': all_act}
+=======
+<<<<<<< HEAD
+        big_subject = request.POST['big_subject']
+        task = request.POST['task']
+        sub_task = request.POST['sub_task']
+        time = request.POST['time']
+        jindu = request.POST['jindu']
+
+        a_row = One_task(big_subject=big_subject, task=task, sub_task=sub_task, time=time, jindu=jindu)
+        a_row.save()
+        content = {"清单": One_task.objects.all(),'select_form': One_task.BIG_CHOICES}
+=======
+        if request.POST['添加计划'] == '':
+            content = {"清单": One_task.objects.all()}
+            return render(request, "about.html", {'警告': '请输入内容'}, content)
+        else:
+            a_row = One_task(big_subject=request.POST['添加计划'], task="学法规 ", sub_task="实施考核", time="2019", jindu="30%")
+            a_row.save()
+            content = {"清单": One_task.objects.all()}
+            return render(request, "about.html", content)
+
+
+
+    if request.method == "GET":
+        content = {"清单": One_task.objects.all()}
+>>>>>>> parent of 6408944... 添加输入功能（有bug）
+>>>>>>> new_db_with_forms
         return render(request, "about.html", content)
     if request.method == "GET":
         page_num = request.GET.get("page")
@@ -80,7 +150,14 @@ def about(request):
         content = {'form': form_obj, 'all_act': all_act, "page_list": html_list, "former_page": former_page, "next_page": next_page, 'page_num': page_num}
         return render(request, "about.html", content)
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    return render(request, "about.html")
+>>>>>>> new_db_with_forms
 
+=======
+>>>>>>> parent of 6408944... 添加输入功能（有bug）
 
 def delete(request, activity_id):
 

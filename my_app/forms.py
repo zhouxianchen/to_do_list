@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from bootstrap_datepicker_plus import DatePickerInput
 from django import forms
 from django.forms import widgets
@@ -29,3 +30,13 @@ class Task2Form(forms.Form):
     end_time = forms.DateField(label="截止时间", widget=DatePickerInput(format='%m/%d/%Y', attrs={"class":"form_control"}), required=False)
     progress = forms.CharField(label="当前进度", widget=widgets.TextInput(attrs={"class":"form_control"}), required=False)
 
+=======
+from django import forms
+
+class OneForm(forms.Form):
+    big_subject = forms.CharField(max_length=50, required=False)
+    task = forms.CharField(max_length=50, required=False)
+    sub_task = forms.CharField(max_length=50, required=False)
+    time = forms.CharField(max_length=50, required=False)
+    jindu = forms.CharField(max_length=50, required=False)
+>>>>>>> new_db_with_forms

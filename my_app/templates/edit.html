@@ -4,11 +4,29 @@
 
 {% block 主体 %}
 
+
+<div class="fieldWrapper">
+    {{ form.task }}
+    {{ form.big_subject }}
+</div>
+
   <form id="form_edit" action="" method = "post">
          <div class="form-rol">
         {%csrf_token %}
+<<<<<<< HEAD
 
 
+=======
+                <div class="col">
+        大类 <input class="form-control" type="text " name = "big_subject" value= "{{current.big_subject}}"/> <br>
+          </div>
+    <div class="col">
+        工作 <input  class="form-control"type="text" name = "task" value= "{{current.task}}"/> <br>
+                 </div>
+    <div class="col">
+        具体 <input  class="form-control" type="text" name = "sub_task" value= "{{current.sub_task}}"/> <br>
+                 </div>
+>>>>>>> new_db_with_forms
     <div class="col">
         具体活动 {{ current_form }} <br>
                  </div>
@@ -17,8 +35,22 @@
              </div>
 
     </form>
+<!--<table>-->
 
+<<<<<<< HEAD
 
 {% endblock 主体 %}
 
 
+=======
+    <!--<form id="form_edit" action="" method = "post">-->
+         <!--<div class="form-row">-->
+        <!--{%csrf_token %}-->
+            <!--{{ form.as_p }}-->
+<!--<button class="btn btn-primary" type="submit"   /> 修改 <br>-->
+         <!--</div>-->
+    <!--</form>-->
+    <!---->
+<!--</table>-->
+{% endblock 主体 %}
+>>>>>>> new_db_with_forms
