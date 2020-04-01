@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .models import Big_subject, Task, Activity
 from .forms import TaskForm, Task2Form
 from django.http import HttpResponse
-from .models import One_task
+from .models import Task
 from .forms import OneForm
 
 # Create your views here.
@@ -30,7 +30,7 @@ def edit(request, activity_id):
         if form_obj.is_valid():
             cur_obj.name = form_obj.cleaned_data['activity']
             cur_obj.task.big_subject.name = form_obj.cleaned_data['big_subject']
-            cur_obj.task.name= form_obj.cleaned_data['task']
+            cur_obj.task.name = form_obj.cleaned_data['task']
             cur_obj.start_time = form_obj.cleaned_data['start_time']
             cur_obj.end_time = form_obj.cleaned_data['end_time']
             cur_obj.progress = form_obj.cleaned_data['progress']
@@ -51,11 +51,16 @@ def edit(request, activity_id):
         return render(request, "edit.html", current_task)
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 def edit(request, plan_id):
     if request.method == "POST":
         form = OneForm(request.POST)
         if form.is_valid():
-            cur = One_task.objects.get(id=plan_id)
+            cur = Task.objects.get(id=plan_id)
             cur.big_subject=form.cleaned_data['big_subject']
             cur.task = form.cleaned_data['task']
             cur.sub_task = form.cleaned_data['sub_task']
@@ -65,7 +70,7 @@ def edit(request, plan_id):
             return redirect("my_app:关于")
     elif request.method =="GET":
         form = OneForm()
-        current_task = {"current": One_task.objects.get(id=plan_id), "form": form}
+        current_task = {"current": Task.objects.get(id=plan_id), "form": form}
         return render(request, "edit.html", current_task)
 
 # def edit(request, plan_id):
@@ -85,6 +90,16 @@ def edit(request, plan_id):
 
 
 
+=======
+>>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
+=======
+>>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
+=======
+>>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
+=======
+>>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
+=======
+>>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
 def about(request):
     if request.method == "POST":
 
@@ -108,9 +123,9 @@ def about(request):
         time = request.POST['time']
         jindu = request.POST['jindu']
 
-        a_row = One_task(big_subject=big_subject, task=task, sub_task=sub_task, time=time, jindu=jindu)
+        a_row = Task(big_subject=big_subject, task=task, sub_task=sub_task, time=time, jindu=jindu)
         a_row.save()
-        content = {"清单": One_task.objects.all(),'select_form': One_task.BIG_CHOICES}
+        content = {"清单": Task.objects.all(),'select_form': One_task.BIG_CHOICES}
         if request.POST['添加计划'] == '':
             content = {"清单": One_task.objects.all()}
             return render(request, "about.html", {'警告': '请输入内容'}, content)
@@ -127,22 +142,42 @@ def about(request):
         return render(request, "about.html", content)
     if request.method == "GET":
         page_num = request.GET.get("page")
-        try:
+        if page_num:
             page_num = int(page_num)
-        except Exception as e:
-            page_num = 1
+        else: page_num = 1
+        per_page = 10
+        data_start = (page_num-1)*per_page
+        data_end = page_num *per_page
 
         form_obj = TaskForm()
         #total_page_number showed
-        from .utils.mypage import Page
-        page_obj = Page(page_num, per_page=10, max_page=7)
-        html_list, former_page, next_page = page_obj.page_html(Activity)
-
-        all_act = Activity.objects.all()[page_obj.start: page_obj.end]
-        content = {'form': form_obj, 'all_act': all_act, "page_list": html_list, "former_page": former_page, "next_page": next_page, 'page_num': page_num}
+        max_page = 7
+        half_max_page = max_page//2
+        total_count = Activity.objects.count()
+        total_page, m = divmod(total_count, per_page)
+        page_start = max(page_num - half_max_page, 1)
+        page_end = min(page_num + half_max_page, total_page+1)
+        if m:
+            total_page += 1
+        all_act = Activity.objects.all().order_by("start_time")[data_start:data_end]
+        html_str_list = []
+        html_str_list.append('<li><a href="/about/?page={0}">首页</a></li>'.format(1))
+        for i in range(page_start, page_end+1):
+            tmp = '<li><a href="/about/?page={0}">{0}</a></li>'.format(i)
+            html_str_list.append(tmp)
+        html_str_list.append('<li><a href="/about/?page={0}">尾页</a></li>'.format(total_page))
+        html_list = "".join(html_str_list)
+        former_page = max(page_num-1,1)
+        next_page = min(page_num+1, total_page)
+        content = {'form': form_obj, 'all_act': all_act, "page_list": html_list, "former_page": former_page, "next_page": next_page}
         return render(request, "about.html", content)
 
     return render(request, "about.html")
+
+
+
+
+
 
 
 def delete(request, activity_id):
