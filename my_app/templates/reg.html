@@ -1,18 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>注册</title>
-</head>
-<body>
-<form action="">
-    {%csrf_token%}
-    <p>用户名：</p>
-    <input type="text" name="username"/>
-    <p>密码：{{ a }}</p>
-    <input type="text" name="password"/>
-    <input type="submit"/>
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block form %}
+    <form action="" method="post" class="form-horizontal" id="pciForm">
+        {% csrf_token %}
+        <h3>{% trans 'Basic' %}</h3>
+         {% bootstrap_field form.pro layout="horizontal" %}
+         {% bootstrap_field form.job_name layout="horizontal" %}
+         <div class="hr-line-dashed"></div>
+         <div class="form-group">
+           <div class="col-sm-4 col-sm-offset-2">
+            <button class="btn btn-default" type="reset"> {% trans 'Reset' %}</button>
+            <button id="submit_button" class="btn btn-primary" type="submit">{% trans 'Submit' %}</button>
+          </div>
+        </div>
+        </form>
+{% endblock %}
 
-</form>
-</body>
 </html>
