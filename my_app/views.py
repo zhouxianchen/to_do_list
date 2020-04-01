@@ -3,7 +3,6 @@ from .models import Big_subject, Task, Activity
 from .forms import TaskForm, Task2Form
 from django.http import HttpResponse
 from .models import Task
-from .forms import OneForm
 
 # Create your views here.
 
@@ -51,55 +50,10 @@ def edit(request, activity_id):
         return render(request, "edit.html", current_task)
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-def edit(request, plan_id):
-    if request.method == "POST":
-        form = OneForm(request.POST)
-        if form.is_valid():
-            cur = Task.objects.get(id=plan_id)
-            cur.big_subject=form.cleaned_data['big_subject']
-            cur.task = form.cleaned_data['task']
-            cur.sub_task = form.cleaned_data['sub_task']
-            cur.time = form.cleaned_data['time']
-            cur.jindu = form.cleaned_data['jindu']
-            cur.save()
-            return redirect("my_app:关于")
-    elif request.method =="GET":
-        form = OneForm()
-        current_task = {"current": Task.objects.get(id=plan_id), "form": form}
-        return render(request, "edit.html", current_task)
-
-# def edit(request, plan_id):
-#     if request.method == "POST":
-#         cur =One_task.objects.get(id=plan_id)
-#         cur.big_subject =request.POST['big_subject']
-#         cur.task = request.POST['task']
-#         cur.sub_task =request.POST['sub_task']
-#         cur.time = request.POST['time']
-#         cur.jindu = request.POST['jindu']
-#         cur.save()
-#         content = {"清单": One_task.objects.all()}
-#         return redirect("my_app:关于")
-#     elif request.method =="GET":
-#         current_task = {"current": One_task.objects.get(id=plan_id)}
-#         return render(request, "edit.html", current_task)
 
 
 
-=======
->>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
-=======
->>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
-=======
->>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
-=======
->>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
-=======
->>>>>>> parent of 02969bb... 添加mypage utils 封装了分页功能
+
 def about(request):
     if request.method == "POST":
 
@@ -116,30 +70,14 @@ def about(request):
             Activity.objects.get_or_create(name=name, task=task_obj[0], start_time=start_time,end_time=end_time, progress=progress)
         all_act = Activity.objects.all()
         content = {'form': form_obj, 'all_act': all_act}
-
-        big_subject = request.POST['big_subject']
-        task = request.POST['task']
-        sub_task = request.POST['sub_task']
-        time = request.POST['time']
-        jindu = request.POST['jindu']
-
-        a_row = Task(big_subject=big_subject, task=task, sub_task=sub_task, time=time, jindu=jindu)
-        a_row.save()
-        content = {"清单": Task.objects.all(),'select_form': One_task.BIG_CHOICES}
         if request.POST['添加计划'] == '':
-            content = {"清单": One_task.objects.all()}
+            content = {"清单": Task.objects.all()}
             return render(request, "about.html", {'警告': '请输入内容'}, content)
         else:
-            a_row = One_task(big_subject=request.POST['添加计划'], task="学法规 ", sub_task="实施考核", time="2019", jindu="30%")
+            a_row = Task(big_subject=request.POST['添加计划'], task="学法规 ", sub_task="实施考核", time="2019", jindu="30%")
             a_row.save()
-            content = {"清单": One_task.objects.all()}
             return render(request, "about.html", content)
 
-
-
-    if request.method == "GET":
-        content = {"清单": One_task.objects.all()}
-        return render(request, "about.html", content)
     if request.method == "GET":
         page_num = request.GET.get("page")
         if page_num:
@@ -172,7 +110,6 @@ def about(request):
         content = {'form': form_obj, 'all_act': all_act, "page_list": html_list, "former_page": former_page, "next_page": next_page}
         return render(request, "about.html", content)
 
-    return render(request, "about.html")
 
 
 

@@ -31,11 +31,3 @@ class Task2Form(forms.Form):
     progress = forms.CharField(label="当前进度", widget=widgets.TextInput(attrs={"class":"form_control"}), required=False)
 
 
-from django import forms
-
-class OneForm(forms.Form):
-    big_subject = forms.CharField(max_length=50, required=False)
-    task = forms.CharField(max_length=50, required=False)
-    sub_task = forms.CharField(max_length=50, required=False)
-    time = forms.CharField(max_length=50, required=False)
-    jindu = forms.CharField(max_length=50, required=False)
