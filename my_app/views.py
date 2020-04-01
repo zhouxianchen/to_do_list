@@ -2,7 +2,6 @@ from django.shortcuts import render,redirect
 from .models import Big_subject, Task, Activity
 from .forms import TaskForm, Task2Form
 from django.http import HttpResponse
-from .models import Task
 from .forms import OneForm
 
 # Create your views here.
