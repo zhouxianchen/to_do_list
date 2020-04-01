@@ -1,12 +1,10 @@
 from django.shortcuts import render,redirect
-<<<<<<< HEAD
 from .models import Big_subject, Task, Activity
 from .forms import TaskForm, Task2Form
 from django.http import HttpResponse
-=======
 from .models import One_task
 from .forms import OneForm
->>>>>>> new_db_with_forms
+
 # Create your views here.
 
 # Create your views here.
@@ -24,7 +22,6 @@ def home(request):
         return render(request, "home.html", content)
 
 
-<<<<<<< HEAD
 
 def edit(request, activity_id):
     if request.method == "POST":
@@ -53,7 +50,7 @@ def edit(request, activity_id):
         current_task = {'current_form': form_obj}
         return render(request, "edit.html", current_task)
 
-=======
+
 def edit(request, plan_id):
     if request.method == "POST":
         form = OneForm(request.POST)
@@ -88,10 +85,9 @@ def edit(request, plan_id):
 
 
 
->>>>>>> new_db_with_forms
 def about(request):
     if request.method == "POST":
-<<<<<<< HEAD
+
         form_obj = TaskForm(request.POST)
         if form_obj.is_valid():
             name = form_obj.cleaned_data['activity']
@@ -105,8 +101,7 @@ def about(request):
             Activity.objects.get_or_create(name=name, task=task_obj[0], start_time=start_time,end_time=end_time, progress=progress)
         all_act = Activity.objects.all()
         content = {'form': form_obj, 'all_act': all_act}
-=======
-<<<<<<< HEAD
+
         big_subject = request.POST['big_subject']
         task = request.POST['task']
         sub_task = request.POST['sub_task']
@@ -116,7 +111,6 @@ def about(request):
         a_row = One_task(big_subject=big_subject, task=task, sub_task=sub_task, time=time, jindu=jindu)
         a_row.save()
         content = {"清单": One_task.objects.all(),'select_form': One_task.BIG_CHOICES}
-=======
         if request.POST['添加计划'] == '':
             content = {"清单": One_task.objects.all()}
             return render(request, "about.html", {'警告': '请输入内容'}, content)
@@ -130,8 +124,6 @@ def about(request):
 
     if request.method == "GET":
         content = {"清单": One_task.objects.all()}
->>>>>>> parent of 6408944... 添加输入功能（有bug）
->>>>>>> new_db_with_forms
         return render(request, "about.html", content)
     if request.method == "GET":
         page_num = request.GET.get("page")
@@ -150,14 +142,8 @@ def about(request):
         content = {'form': form_obj, 'all_act': all_act, "page_list": html_list, "former_page": former_page, "next_page": next_page, 'page_num': page_num}
         return render(request, "about.html", content)
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     return render(request, "about.html")
->>>>>>> new_db_with_forms
 
-=======
->>>>>>> parent of 6408944... 添加输入功能（有bug）
 
 def delete(request, activity_id):
 
